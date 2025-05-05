@@ -10,6 +10,18 @@
 
 For this demonstration we will deploy the Logging stack on an OCP cluster installed on Google Cloud Platform with Google Cloud Storage available as supported object store through the default `standard-csi` storageclass.
 
+As further prerequisites we list the following:
+- You created a project on Google Cloud Platform (GCP)
+- You created a bucket in the same project.
+- You created a service account in the same project for GCP authentication.
 
+### Creating an object storage secret
+
+```
+$ oc create secret generic logging-loki-gcs \
+> --from-literal=bucketname="9a4e5d52-logging-loki" \
+> --from-literal=key.json="./key.json"
+secret/logging-loki-gcs created
+```
 
 
