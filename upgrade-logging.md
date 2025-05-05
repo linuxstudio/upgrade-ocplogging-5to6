@@ -15,6 +15,12 @@ As further prerequisites we list the following:
 - You created a bucket in the same project.
 - You created a service account in the same project for GCP authentication.
 
+### Creating an object storage bucket
+
+Go to https://console.cloud.google.com/storage/ and create a bucket with a globally unique name, e.g. "9a4e5d52-logging-loki"
+
+![Google Cloud Platform Bucket](images/deploy-59/00-logging-loki-bucket.png)
+
 ### Creating an object storage secret
 
 ```
