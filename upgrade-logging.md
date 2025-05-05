@@ -33,7 +33,7 @@ Go to https://console.cloud.google.com/storage/ and create a bucket with a globa
 $ oc -n openshift-logging \
 > create secret generic logging-loki-gcs \
 > --from-literal=bucketname="9a4e5d52-logging-loki" \
-> --from-literal=key.json="./key.json"
+> --from-file=key.json="./key.json"
 secret/logging-loki-gcs created
 ```
 
