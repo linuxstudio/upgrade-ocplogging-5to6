@@ -37,4 +37,40 @@ $ oc -n openshift-logging \
 secret/logging-loki-gcs created
 ```
 
+### Install Loki Operator version 5.9
 
+![Loki Operator 1](images/deploy-59/01-loki-operator-5.9.png)
+
+![Loki Operator 2](images/deploy-59/02-loki-operator-5.9.png)
+
+![Loki Operator 3](images/deploy-59/03-loki-operator-5.9.png)
+
+### Install Logging Operator version 5.9
+
+![Logging Operator 1](images/deploy-59/04-logging-operator-5.9.png)
+
+![Logging Operator 2](images/deploy-59/05-logging-operator-5.9.png)
+
+![Logging Operator 3](images/deploy-59/06-logging-operator-5.9.png)
+
+### Switch project to openshift-logging
+
+By navigating to the `Installed Operators` menu, one is presented with a list of operators installed in all namespaces:
+
+![Installed Operators](images/deploy-59/07-installed-operators-5.9.png)
+
+Using the drop-down `Project:` menu we switch view to see only the operators in the `openshift-logging` project:
+
+![Installed Operators Logging](images/deploy-59/08-switch-openshift-logging.png)
+
+### Create LokiStack instance
+
+![All instances of Loki](images/deploy-59/09-all-instances-loki-5.9.png)
+
+We create a LokiStack instance named `logging-loki` and referencing the previously created object storage secret:
+
+![LokiStack yaml](images/deploy-59/10-lokistack-yaml-5.9.png)
+
+If one has not previously created the referenced secret, the instance appears in status `Degraded`:
+
+![LokiStack Degraded](images/deploy-59/11-lokistack-degraded-5.9.png)
