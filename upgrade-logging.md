@@ -78,3 +78,7 @@ If one has not previously created the referenced secret, the instance appears in
 If all the components are fully validated, the instance appears in status `Ready`:
 
 ![LokiStack Ready](images/deploy-59/12-lokistack-ready-5.9.png)
+
+### Create OpenShift Logging instance
+
+
