@@ -49,8 +49,15 @@ It is possible that attempting to create manually the `openshift-logging` projec
 $ oc new-project openshift-logging
 Error from server (Forbidden): project.project.openshift.io "openshift-logging" is forbidden: cannot request a project starting with "openshift-"
 ```
+The alternative would be to ask an administrator to create the project with the command:
 
-therefore it is better to let the project be created as part of the Logging Operator  installation.
+```
+$ oc adm new-project openshift-logging
+```
+
+as per documentation note: [Working with projects](https://docs.redhat.com/en/documentation/openshift_container_platform/4.9/html/building_applications/projects#working-with-projects)
+
+In this document we decided to let the project be created as part of the Logging Operator  installation.
 
 Once we are sure that the `openshift-logging` project is available we can create the secret:
 
