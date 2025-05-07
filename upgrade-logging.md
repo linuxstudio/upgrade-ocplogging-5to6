@@ -67,7 +67,7 @@ Using the drop-down `Project:` menu we switch view to see only the operators in 
 
 ![All instances of Loki](images/deploy-59/09-all-instances-loki-5.9.png)
 
-We create a LokiStack instance named `logging-loki` and referencing the previously created object storage secret:
+We create a LokiStack instance named `logging-loki` and referencing the previously created object storage secret. Please notice that loki sizing used is `1x.demo`. For a full overview of the possible loki deployment sizing and requested resources, please refer to the official documentation [Loki deployment sizing](https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/logging/log-storage-2#loki-deployment-sizing_installing-log-storage)
 
 ![LokiStack yaml](images/deploy-59/10-lokistack-yaml-5.9.png)
 
