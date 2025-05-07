@@ -15,22 +15,6 @@ As further prerequisites we list the following:
 - You created a bucket in the same project.
 - You created a service account in the same project for GCP authentication.
 
-### Create an object storage bucket
-
-Go to https://console.cloud.google.com/storage/ and create a bucket with a globally unique name, e.g. "9a4e5d52-logging-loki"
-
-![Google Cloud Platform Bucket](images/deploy-59/00-logging-loki-bucket.png)
-
-### Create an object storage secret
-
-```
-$ oc -n openshift-logging \
-> create secret generic logging-loki-gcs \
-> --from-literal=bucketname="9a4e5d52-logging-loki" \
-> --from-file=key.json="./key.json"
-secret/logging-loki-gcs created
-```
-
 ### Install Loki Operator version 5.9
 
 ![Loki Operator 1](images/deploy-59/01-loki-operator-5.9.png)
@@ -46,6 +30,37 @@ secret/logging-loki-gcs created
 ![Logging Operator 2](images/deploy-59/05-logging-operator-5.9.png)
 
 ![Logging Operator 3](images/deploy-59/06-logging-operator-5.9.png)
+
+
+### Create an object storage bucket
+
+Go to https://console.cloud.google.com/storage/ and create a bucket with a globally unique name, e.g. "9a4e5d52-logging-loki"
+
+![Google Cloud Platform Bucket](images/deploy-59/00-logging-loki-bucket.png)
+
+### Create an object storage secret
+
+This step is done after the Logging Operator has been installed, because at this stage we have the `openshift-logging` project available.
+
+NOTE
+It is possible that attempting to create manually the `openshift-logging` project fails with the error:
+
+```
+$ oc new-project openshift-logging
+Error from server (Forbidden): project.project.openshift.io "openshift-logging" is forbidden: cannot request a project starting with "openshift-"
+```
+
+therefore it is better to let the project be created as part of the Logging Operator  installation.
+
+Once we are sure that the `openshift-logging` project is available we can create the secret:
+
+```
+$ oc -n openshift-logging \
+> create secret generic logging-loki-gcs \
+> --from-literal=bucketname="9a4e5d52-logging-loki" \
+> --from-file=key.json="./key.json"
+secret/logging-loki-gcs created
+```
 
 ### Switch project to openshift-logging
 
