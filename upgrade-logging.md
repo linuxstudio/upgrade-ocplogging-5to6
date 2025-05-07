@@ -15,12 +15,6 @@ As further prerequisites we list the following:
 - You created a bucket in the same project.
 - You created a service account in the same project for GCP authentication.
 
-### Create the namespace for logging 
-
-```
-$ oc new-project openshift-logging
-```
-
 ### Create an object storage bucket
 
 Go to https://console.cloud.google.com/storage/ and create a bucket with a globally unique name, e.g. "9a4e5d52-logging-loki"
