@@ -98,3 +98,7 @@ If all the components are fully validated, the instance appears in status `Ready
 ### Create OpenShift Logging instance
 
 ![All instances of Logging](images/deploy-59/13-all-instances-logging-5.9.png)
+
+![Logging yaml](images/deploy-59/14-logging-yaml-5.9.png)
+
+![Logging Ready](images/deploy-59/15-logging-ready-5.9.png)
