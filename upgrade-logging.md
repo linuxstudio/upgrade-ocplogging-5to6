@@ -102,3 +102,6 @@ If all the components are fully validated, the instance appears in status `Ready
 ![Logging yaml](images/deploy-59/14-logging-yaml-5.9.png)
 
 ![Logging Ready](images/deploy-59/15-logging-ready-5.9.png)
+
+## Upgrade to version 6.x of the OCP Logging stack
+- Follow the steps in the KB article [How to transition the collectors and the default log store from Red Hat OpenShift Logging 5 to 6](https://access.redhat.com/articles/7089860)
